@@ -19,7 +19,7 @@ const ProfileCard = (props: ProfileCardProps): JSX.Element => {
     <article>
       <img src={profilePic} alt={`${profile.name}'s avatar`} />
       <h1>{profile.name}</h1>
-      <Link to={`/profiles/${profile.id}`}>
+      <Link to={`/profiles/${profile.id}`} state={profile}>
         <button>
           View Schedule
         </button>
