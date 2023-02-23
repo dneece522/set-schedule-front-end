@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 // assets
 import defaultPic from '../../assets/icons/profile.png'
 
@@ -12,11 +14,16 @@ const ProfileCard = (props: ProfileCardProps): JSX.Element => {
   const { profile } = props
 
   const profilePic = profile.photo ? profile.photo : defaultPic
-
+  
   return (
     <article>
       <img src={profilePic} alt={`${profile.name}'s avatar`} />
       <h1>{profile.name}</h1>
+      <Link to={`/profiles/${profile.id}`}>
+        <button>
+          View Schedule
+        </button>
+      </Link>
     </article>
   )
 }
