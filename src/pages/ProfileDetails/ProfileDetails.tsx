@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom"
 import { useLocation } from "react-router-dom"
 
 // types
-import { User, Profile } from '../../types/models'
+import { User, Profile, Course } from '../../types/models'
 import { CourseManagerFormData } from "../../types/forms"
 
 // services
@@ -14,6 +14,7 @@ import defaultPic from '../../assets/icons/profile.png'
 
 // components
 import NewCourse from "../../components/NewCourse/NewCourse"
+import Courses from "../../components/Courses/Courses"
 
 interface ProfDetails {
   user: User | null;
@@ -46,10 +47,10 @@ const ProfileDetails = (props: ProfDetails): JSX.Element => {
   const handleAddCourse = async (courseData: CourseManagerFormData): Promise<void> => {
     try {
       const newCourse = await profileService.addCourse(id, courseData)
-      // showProfile?.courses.push(newCourse)
-      // setShowProfile({ ...showProfile as Profile, courses: [...showProfile?.courses, newCourse] })
+      // setShowProfile({ ...showProfile as Profile, courses: [...showProfile.courses, newCourse] })
     } catch (error) {
       console.error(error)
+      throw error
     }
   }
 
@@ -60,7 +61,9 @@ const ProfileDetails = (props: ProfDetails): JSX.Element => {
     <div className="nameh1">
       <img src={profilePic} alt={`${profileName}'s avatar`} />
       <h1>{profileName}</h1>
+      <h2>Schedule:</h2>
       <NewCourse handleAddCourse={handleAddCourse} />
+      <Courses courses={showProfile?.courses} />
     </div>
   )
 }
