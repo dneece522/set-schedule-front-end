@@ -15,16 +15,16 @@ const NewCourse = (props: NewCourseProps): JSX.Element => {
     hours: '3'
   })
 
-  const handleChange = ( evt: KeyboardEvent ): void => {
+  const handleChange = ( evt: React.ChangeEvent<HTMLInputElement> ): void => {
     setForm({ ...form, [evt.target.name]: evt.target.value })
   }
 
-  const handleSubmit = (evt: FormEvent): void => {
+  const handleSubmit = (evt: React.FormEvent): void => {
     evt.preventDefault()
     props.handleAddCourse(form)
     setForm({
       subject: '',
-      code: 1,
+      code: 1, 
       days: 'M, W, F',
       time: '8:00 - 9:00',
       hours: '3'
@@ -33,15 +33,16 @@ const NewCourse = (props: NewCourseProps): JSX.Element => {
 
   return (
     <form onSubmit={handleSubmit}>
-      {/* <textarea
+      <label htmlFor="subject">Subject:</label>
+      <input
         required
         type="text"
-        name="text"
-        id="text-input"
+        name="subject"
+        id="subject-input"
         value={form.subject}
-        placeholder="Add a Comment"
+        placeholder="Ex: MATH"
         onChange={handleChange}
-      /> */}
+      />
       <button type="submit">Add Course</button>
     </form>
   )
