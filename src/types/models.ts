@@ -1,6 +1,15 @@
 /* ---------===== custom props ====--------- */
 
-
+export interface Course {
+  subject: string;
+  code: number;
+  days: string;
+  time: string;
+  hours: string;
+  profileId: number;
+  createdAt: string;
+  updatedAt: string;
+}
 
 /* ---------===== auth models =====--------- */
 
@@ -10,6 +19,7 @@ export interface Profile {
   id: number;
   createdAt: string;
   updatedAt: string;
+  courses: Course[];
 }
 
 export interface User {

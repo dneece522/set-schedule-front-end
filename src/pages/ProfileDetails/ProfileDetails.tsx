@@ -21,7 +21,7 @@ type ProfileParams = {
 
 const ProfileDetails = (props: ProfDetails): JSX.Element => {
   const { user } = props
-  // A profile can be accessed by using the useLocation() or the useEffect. I left both in just to show I know how to show a data object either way.
+  // A profile can be accessed by using the useLocation() or the useEffect. I left both in just to show I know how to show a data object through useLocation or a show service function.
   const location = useLocation()
   const profile = location.state
   const [showProfile, setShowProfile] = useState<Profile>()
