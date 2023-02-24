@@ -46,8 +46,8 @@ const ProfileDetails = (props: ProfDetails): JSX.Element => {
   const handleAddCourse = async (courseData: CourseManagerFormData): Promise<void> => {
     try {
       const newCourse = await profileService.addCourse(id, courseData)
-      showProfile?.courses.push(newCourse)
-      // setShowProfile({ ...showProfile as Profile, courses: [...showProfile?.courses, newCourse] })
+      // showProfile?.courses.push(newCourse)
+      setShowProfile({ ...showProfile as Profile, courses: [...showProfile?.courses, newCourse] })
     } catch (error) {
       console.error(error)
     }
