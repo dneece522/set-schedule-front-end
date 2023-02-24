@@ -4,6 +4,7 @@ import { useLocation } from "react-router-dom"
 
 // types
 import { User, Profile } from '../../types/models'
+import { CourseManagerFormData } from "../../types/forms"
 
 // services
 import * as profileService from '../../services/profileService'
@@ -38,6 +39,16 @@ const ProfileDetails = (props: ProfDetails): JSX.Element => {
     }
     fetchProfile()
   }, [id])
+  
+  const handleAddCourse = async (courseData: CourseManagerFormData): Promise<void> => {
+    try {
+      const newCourse = await profileService.addCourse(id, courseData)
+      showProfile?.courses.push(newCourse)
+      // setShowProfile({ ...showProfile as Profile, courses: [...showProfile?.courses, newCourse] })
+    } catch (error) {
+      console.error(error)
+    }
+  }
 
   const profileName = profile?.name ? profile?.name : showProfile?.name
   const profilePic = profile?.photo ? profile?.photo : showProfile?.photo ? showProfile?.photo : defaultPic

@@ -3,6 +3,7 @@ import * as tokenService from './tokenService'
 
 // types
 import { Profile, Course } from '../types/models'
+import { CourseManagerFormData } from '../types/forms'
 
 const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}/api/profiles`
 
@@ -46,7 +47,7 @@ async function showProfile(id: string): Promise<Profile> {
   }
 }
 
-async function addCourse(id: string, courseData: Course): Promise<Course> {
+async function addCourse(id: string, courseData: CourseManagerFormData): Promise<Course> {
   try {
     const res = await fetch(`${BASE_URL}/${id}/courses`, {
       method: 'POST',
@@ -56,7 +57,7 @@ async function addCourse(id: string, courseData: Course): Promise<Course> {
       },
       body: JSON.stringify(courseData)
     })
-    return await res.json()
+    return await res.json() as Course
   } catch (error) {
     throw error
   }

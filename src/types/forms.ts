@@ -1,6 +1,12 @@
 /* ---------==== custom forms ====--------- */
 
-
+export interface CourseManagerFormData {
+  subject: string;
+  code: number;
+  days: string;
+  time: string;
+  hours: string;
+}
 
 /* ---------===== auth forms =====--------- */
 
