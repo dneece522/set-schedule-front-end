@@ -12,6 +12,9 @@ import * as profileService from '../../services/profileService'
 // assets
 import defaultPic from '../../assets/icons/profile.png'
 
+// components
+import NewCourse from "../../components/NewCourse/NewCourse"
+
 interface ProfDetails {
   user: User | null;
 }
@@ -57,6 +60,7 @@ const ProfileDetails = (props: ProfDetails): JSX.Element => {
     <div className="nameh1">
       <img src={profilePic} alt={`${profileName}'s avatar`} />
       <h1>{profileName}</h1>
+      <NewCourse handleAddCourse={handleAddCourse} />
     </div>
   )
 }
