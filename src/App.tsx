@@ -89,6 +89,10 @@ function App(): JSX.Element {
             </ProtectedRoute>
           }
         />
+        <Route 
+          path="/" 
+          element={<Landing user={user} handleLogout={handleLogout} />}
+        />
       </Routes>
     </>
   )
