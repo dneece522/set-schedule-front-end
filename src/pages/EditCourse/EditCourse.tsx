@@ -26,7 +26,7 @@ const EditCourse = (): JSX.Element => {
   }
 
   return (
-    <form autoComplete="off" onSubmit={handleSubmit}>
+    <form id="edit-form" autoComplete="off" onSubmit={handleSubmit}>
       <h1>Edit Course Info:</h1>
       <label htmlFor="subject">Subject:</label>
       <input

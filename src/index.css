@@ -208,3 +208,7 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
+
+#edit-form {
+  margin-top: 100px;
+}

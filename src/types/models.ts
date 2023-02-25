@@ -1,6 +1,7 @@
 /* ---------===== custom props ====--------- */
 
 export interface Course {
+  id: number;
   subject: string;
   code: number;
   days: string;

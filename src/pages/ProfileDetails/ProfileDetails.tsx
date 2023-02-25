@@ -63,7 +63,7 @@ const ProfileDetails = (props: ProfProps): JSX.Element => {
       <h1>{profileName}</h1>
       <h2>Schedule:</h2>
       { user?.id.toString() === id && <NewCourse handleAddCourse={handleAddCourse} /> }
-      <Courses courses={showProfile?.courses} />
+      <Courses courses={showProfile?.courses} profileId={id} />
     </div>
   )
 }
