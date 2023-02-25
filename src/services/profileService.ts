@@ -63,9 +63,26 @@ async function addCourse(id: string, courseData: CourseManagerFormData): Promise
   }
 }
 
+async function updateCourse(profileId: string, courseId: string, courseData: CourseManagerFormData): Promise<Course> {
+  try {
+    const res = await fetch(`${BASE_URL}/${profileId}/courses/${courseId}}`, {
+      method: 'PUT',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(courseData)
+    })
+    return await res.json() as Course
+  } catch (error) {
+    throw error
+  }
+}
+
 export {
   getAllProfiles,
   addPhoto,
   showProfile,
   addCourse,
+  updateCourse,
 }
