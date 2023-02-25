@@ -92,7 +92,7 @@ const EditCourse = (): JSX.Element => {
         <option value="3">3</option>
         <option value="4">4</option>
       </select>
-      <button type="submit">Add Course</button>
+      <button type="submit">Update Course</button>
     </form>
   )
 }

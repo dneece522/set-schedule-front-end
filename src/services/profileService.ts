@@ -64,8 +64,6 @@ async function addCourse(id: string, courseData: CourseManagerFormData): Promise
 }
 
 async function updateCourse(profileId: string, courseId: string, courseData: CourseManagerFormData): Promise<Course> {
-  console.log('COURSE ID:', courseId)
-  
   try {
     const res = await fetch(`${BASE_URL}/${profileId}/courses/${courseId}`, {
       method: 'PUT',
