@@ -1,19 +1,19 @@
 import { useState } from "react"
+import { useLocation, useParams, useNavigate } from "react-router"
 
-import { CourseManagerFormData } from "../../types/forms"
+// services
+import * as profileService from '../../services/profileService'
 
-type NewCourseProps = {
-  handleAddCourse: (courseData: CourseManagerFormData) => void;
+type ProfileParams = {
+  profileId: string;
+  courseId: string;
 }
 
-const NewCourse = (props: NewCourseProps): JSX.Element => {
-  const [form, setForm] = useState({
-    subject: '',
-    code: 101,
-    days: 'M, W, F',
-    time: '8:00 - 9:00',
-    hours: '3'
-  })
+const EditCourse = (): JSX.Element => {
+  const navigate = useNavigate()
+  const { state } = useLocation()
+  const { profileId, courseId } = useParams() as ProfileParams
+  const [form, setForm] = useState(state)
 
   const handleChange = ( evt: React.ChangeEvent<HTMLInputElement | HTMLSelectElement> ): void => {
     setForm({ ...form, [evt.target.name]: evt.target.value })
@@ -21,18 +21,13 @@ const NewCourse = (props: NewCourseProps): JSX.Element => {
 
   const handleSubmit = (evt: React.FormEvent): void => {
     evt.preventDefault()
-    props.handleAddCourse(form)
-    setForm({
-      subject: '',
-      code: 101, 
-      days: 'M, W, F',
-      time: '8:00 - 9:00',
-      hours: '3'
-    })
+    profileService.updateCourse(profileId, courseId, form)
+    navigate(`/profiles/${profileId}`)
   }
 
   return (
     <form autoComplete="off" onSubmit={handleSubmit}>
+      <h1>Edit Course Info:</h1>
       <label htmlFor="subject">Subject:</label>
       <input
         required
@@ -102,4 +97,4 @@ const NewCourse = (props: NewCourseProps): JSX.Element => {
   )
 }
 
-export default NewCourse
+export default EditCourse

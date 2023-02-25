@@ -9,6 +9,7 @@ import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import ProfileDetails from './pages/ProfileDetails/ProfileDetails'
+import EditCourse from './pages/EditCourse/EditCourse'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -97,6 +98,11 @@ function App(): JSX.Element {
             </ProtectedRoute>
           }
         />
+        <Route path="/profiles/:profileId/courses/:courseId" element={
+          <ProtectedRoute user={user}>
+            <EditCourse />
+          </ProtectedRoute>
+        } />
       </Routes>
     </>
   )
