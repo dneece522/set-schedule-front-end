@@ -58,7 +58,7 @@ const ProfileDetails = (props: ProfProps): JSX.Element => {
   const profilePic = profile?.photo ? profile?.photo : showProfile?.photo ? showProfile?.photo : defaultPic
 
   return (
-    <div className="nameh1">
+    <div id="prof-details">
       <img src={profilePic} alt={`${profileName}'s avatar`} />
       <h1>{profileName}</h1>
       <h2>Schedule:</h2>

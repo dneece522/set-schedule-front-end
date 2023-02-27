@@ -1,5 +1,6 @@
 // stylesheets
 import styles from './Landing.module.css'
+import logo from '../../assets/icons/logo.png'
 
 // types
 import { User } from '../../types/models'
@@ -21,7 +22,8 @@ const Landing = ({ user, handleLogout }: LandingProps): JSX.Element => {
 
   return (
     <main className={styles.container}>
-      <h1>hello, {user ? user.name : 'friend'}</h1>
+      <h1>Welcome, {user ? user.name : 'friend'}</h1>
+      <img src={logo} alt="" />
       { user && 
         <button onClick={handleDeleteAccount}>
           DELETE ACCOUNT

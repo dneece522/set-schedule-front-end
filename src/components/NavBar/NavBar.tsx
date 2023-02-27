@@ -17,7 +17,7 @@ const NavBar = (props: NavBarProps): JSX.Element => {
       <NavLink className="links" id="logo-link" to="/">setSchedule</NavLink>
       {user ?
         <ul>
-          <li>Welcome, {user.name}</li>
+          <li>{user.name}</li>
           <li><NavLink className="links" to="/profiles">Profiles</NavLink></li>
           <li><NavLink className="links" to="/change-password">Change Password</NavLink></li>
           <li><NavLink className="links" to="" onClick={handleLogout}>LOG OUT</NavLink></li>
