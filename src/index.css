@@ -273,6 +273,11 @@ form button {
 
 #edit-form {
   margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  gap: 20px;
 }
 
 #logo-link {
