@@ -2,7 +2,7 @@
 
 Image Here
 
-## Open the App [HERE](https://set-schedule.netlify.app/profiles)!
+## Open the App [HERE](https://set-schedule.netlify.app)!
 
 All college students have been there; you sign up for classes months before the semester starts, and by the time classes roll around, it's hard to remember what days you have math or what time history starts. You may have a low-resolution screenshot on your phone that you took from the terrible UI on your school's website, and you may even set that as your screensaver to try and remember everything! The worst part is when your friends text you to hang out or grab some drinks at happy hour, but you just sat down for your STATS 101 class like you told your friends for the millionth time.
 

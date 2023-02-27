@@ -13,23 +13,41 @@ const Courses = (props: CourseProps): JSX.Element => {
   const { user, courses, profileId } = props
 
   return (
-    < >
+    <div id="course-list">
       {
         courses?.length ?
-          courses?.map((course, idx) => (
-            <div key={idx}>
-              <h3>{course.subject} {course.code} | Days: {course.days} | Time: {course.time} | Credit Hours: {course.hours}</h3>
-              { user?.id.toString() === profileId &&
-                <Link to={`/profiles/${profileId}/courses/${course.id}`} state={course}>
-                  <button>EDIT</button>
-                </Link>
-              }
-            </div>
-          ))
+          <table>
+            <thead>
+              <tr>
+                <th>Class</th>
+                <th>Days</th>
+                <th>Time</th>
+                <th>Credit Hours</th>
+                { user?.id.toString() === profileId && <th>Edit</th> }
+              </tr>
+            </thead>
+            <tbody>
+              {courses?.map((course, idx) => (
+                <tr key={idx}>
+                  <td>{course.subject} {course.code}</td>
+                  <td>{course.days}</td>
+                  <td>{course.time}</td>
+                  <td>{course.hours}</td>
+                  <td>
+                    { user?.id.toString() === profileId &&
+                      <Link to={`/profiles/${profileId}/courses/${course.id}`} state={course}>
+                        <button>EDIT</button>
+                      </Link>
+                    }
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         :
           <h3>This Profile has not set a schedule yet.</h3>
       }
-    </>
+    </div>
   )
 }
 

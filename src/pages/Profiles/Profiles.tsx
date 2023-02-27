@@ -14,11 +14,13 @@ const Profiles = (props: ProfilesProps): JSX.Element => {
   if (!profiles.length) return <p>No profiles yet...</p>
 
   return (
-    <main className='list'>
-      <h1>Profile List:</h1>
-      {profiles.map((profile: Profile) =>
-        <ProfileCard key={profile.id} profile={profile} />
-      )}
+    <main>
+      <h1 id="profiles-title">Profile List:</h1>
+      <div className='list'>
+        {profiles.map((profile: Profile) =>
+          <ProfileCard key={profile.id} profile={profile} />
+        )}
+      </div>
     </main>
   )
 }
