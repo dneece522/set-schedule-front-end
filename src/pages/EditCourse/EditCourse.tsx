@@ -89,7 +89,7 @@ const EditCourse = (): JSX.Element => {
         </div>
 
         <div>
-          <label htmlFor="hours">Hours: </label>
+          <label htmlFor="hours">Credit Hours: </label>
           <select 
             required 
             name="hours" 

@@ -1,6 +1,6 @@
 # setSchedule
 
-Image Here
+![landing page](./public/landing-page.png)
 
 ## Open the App [HERE](https://set-schedule.netlify.app)!
 
