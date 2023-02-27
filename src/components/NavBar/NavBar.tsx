@@ -14,17 +14,18 @@ const NavBar = (props: NavBarProps): JSX.Element => {
   
   return (
     <nav>
+      <NavLink className="links" id="logo-link" to="/">setSchedule</NavLink>
       {user ?
         <ul>
           <li>Welcome, {user.name}</li>
-          <li><NavLink to="/profiles">Profiles</NavLink></li>
-          <li><NavLink to="/change-password">Change Password</NavLink></li>
-          <li><NavLink to="" onClick={handleLogout}>LOG OUT</NavLink></li>
+          <li><NavLink className="links" to="/profiles">Profiles</NavLink></li>
+          <li><NavLink className="links" to="/change-password">Change Password</NavLink></li>
+          <li><NavLink className="links" to="" onClick={handleLogout}>LOG OUT</NavLink></li>
         </ul>
       :
         <ul>
-          <li><NavLink to="/login">Log In</NavLink></li>
-          <li><NavLink to="/signup">Sign Up</NavLink></li>
+          <li><NavLink className="links" to="/login">Log In</NavLink></li>
+          <li><NavLink className="links" to="/signup">Sign Up</NavLink></li>
         </ul>
       }
     </nav>
