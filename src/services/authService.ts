@@ -103,8 +103,6 @@ async function deleteAccount(): Promise<void> {
   }
 }
 
-// and don't forget to export it! 
-
 export {
   signup,
   getUser,

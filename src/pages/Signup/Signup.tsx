@@ -1,4 +1,4 @@
-// npm packages
+// npm modules
 import { useState } from 'react'
 
 // components

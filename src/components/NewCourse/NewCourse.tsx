@@ -1,5 +1,7 @@
+// npm modules
 import { useState } from "react"
 
+// form type
 import { CourseManagerFormData } from "../../types/forms"
 
 type NewCourseProps = {
